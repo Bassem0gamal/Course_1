@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'main.dart';
+import '../model/contact_model.dart';
+import '../model/contact_widget.dart';
 
 class NewContactView extends StatefulWidget {
   const NewContactView({Key? key}) : super(key: key);
