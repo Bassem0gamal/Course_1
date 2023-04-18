@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/add_new_contact.dart';
+import 'screens/add_new_note.dart';
 import 'screens/home_page.dart';
 
 void main() {
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       ),
       home: const HomePage(),
       routes: {
-        '/new-contact': (context) => const NewContactView(),
+        '/new-note': (context) => const NewNoteView(),
       },
     );
   }

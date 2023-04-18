@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-import '../model/contact_model.dart';
-import '../model/contact_widget.dart';
+import '../model/note_model.dart';
+import '../model/note_widget.dart';
 
-class NewContactView extends StatefulWidget {
-  const NewContactView({Key? key}) : super(key: key);
+class NewNoteView extends StatefulWidget {
+  const NewNoteView({Key? key}) : super(key: key);
 
   @override
-  State<NewContactView> createState() => _NewContactViewState();
+  State<NewNoteView> createState() => _NewNoteViewState();
 }
 
-class _NewContactViewState extends State<NewContactView> {
+class _NewNoteViewState extends State<NewNoteView> {
   late final TextEditingController _controller;
 
   @override
@@ -42,8 +42,8 @@ class _NewContactViewState extends State<NewContactView> {
             ),
             TextButton(
                 onPressed: () {
-                  final contact = Contact(name: _controller.text);
-                  ContactBook().add(contact: contact);
+                  final contact = Note(name: _controller.text);
+                  NoteBook().add(contact: contact);
                   Navigator.of(context).pop();
                 },
                 child: const Text('Add contact'))

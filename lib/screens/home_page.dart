@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../model/contact_widget.dart';
+import '../model/note_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -12,25 +12,25 @@ class HomePage extends StatelessWidget {
         title: const Text('Home PAge'),
       ),
       body: ValueListenableBuilder(
-        valueListenable: ContactBook(),
+        valueListenable: NoteBook(),
         builder: (context, value, child) {
-          final contacts = value;
+          final notes = value;
           return ListView.builder(
-              itemCount: contacts.length,
+              itemCount: notes.length,
               itemBuilder: (context, index) {
-                final contact = contacts[index];
+                final note = notes[index];
                 return Dismissible(
                   onDismissed: (direction) {
-                    ContactBook().remove(contact: contact);
+                    NoteBook().remove(contact: note);
                   },
-                  key: ValueKey(contact.id),
+                  key: ValueKey(note.id),
                   child: Column(
                     children: [
                       Material(
                         color: Colors.white,
                         elevation: 6.0,
                         child: ListTile(
-                          title: Text(contact.name),
+                          title: Text(note.name),
                         ),
                       ),
                       const SizedBox(height: 8.0),
@@ -42,7 +42,7 @@ class HomePage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          await Navigator.of(context).pushNamed('/new-contact');
+          await Navigator.of(context).pushNamed('/new-note');
         },
         child: const Icon(Icons.add),
       ),

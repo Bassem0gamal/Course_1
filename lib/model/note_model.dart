@@ -1,8 +1,8 @@
 import 'package:uuid/uuid.dart';
 
-class Contact {
+class Note {
   final String id;
   final String name;
 
-  Contact({required this.name}) : id = const Uuid().v4();
+  Note({required this.name}) : id = const Uuid().v4();
 }
